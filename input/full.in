@@ -1,0 +1,32 @@
+#
+# input example for addH showing all parameters (set to the default where
+#   appropriate)
+#
+
+inPDB		= 3INC.pdb		# required
+outPDB		= test.pdb		# required
+top_file	= ../data/top.dat	# optional: topology database
+model_no	= 0			# model number to extract (>= 0)
+					# first model if negative
+output_format	= std			# 'std' or 'min'
+#altloc		= A			# simple filter by alternate locator
+remove_H	= y			# remove all existing hydrogens
+no_model_record	= n			# do not write MODEL records
+no_cryst_record = n			# do not write CRYST1 records
+no_ter_record	= n			# do not write TER records
+no_end_record	= n			# do not write END records
+ss_name		= CYS2			# internal name for S-S bridges
+read_ssbond	= n			# read SSBOND records
+write_ssbond	= n			# write SSBOND records
+keep_ss_name	= n			# keep ssbond_name in output
+keep_serial	= n			# use original atom serial numbers
+protonate	= n			# do protonation via PROPKA 2.0
+protonate_pH	= 7.0			# the pH
+protonate_ttb   = ../data/amber.ttb     # database to translate protonation res
+N-terminus	= y			# N-terminus yes or no
+C-terminus	= n			# C-terminus yes or no
+DNA-5'-terminus	= y			# DNA-5'-terminus yes or no
+DNA-3'-terminus	= y			# DNA-3'-terminus yes or no
+RNA-5'-terminus	= y			# RNA-5'-terminus yes or no
+RNA-3'-terminus	= y			# RNA-3'-terminus yes or no
+warn_occ	= n			# warn about zero occupancies

@@ -1,0 +1,31 @@
+/*
+ * Copyright (C) 2011 Hannes Loeffler, STFC Daresbury, UK
+ *
+ *
+ * Configuration file.
+ *
+ *
+ * $Id: config.h 83 2012-05-09 14:31:33Z hhl $
+ *
+ */
+
+
+
+#ifndef _MOLPREP_CONFIG_H
+#define _MOLPREP_CONFIG_H      1
+
+#define VERSION_MAJOR @VERSION_MAJOR@
+#define VERSION_MINOR @VERSION_MINOR@
+#define VERSION_PATCH @VERSION_PATCH@
+
+#define PATH_PREFIX ${CMAKE_INSTALL_PREFIX}
+#define PATH_SHARE PATH_PREFIX/share/${CMAKE_PROJECT_NAME}
+
+#define EVAL(s) #s
+#define STRINGIFY(s) EVAL(s)
+
+#define TOP_DEFAULT_FILE STRINGIFY(PATH_SHARE/top.dat)
+
+#cmakedefine HAVE_ZLIB
+
+#endif

@@ -1,0 +1,30 @@
+/*
+ * Copyright (C) 2012 Hannes Loeffler, STFC Daresbury, UK
+ *
+ *
+ * global option flag list via X macros
+ *
+ *
+ * $Id: options.def 152 2012-06-14 14:34:17Z hhl $
+ *
+ */
+
+
+
+X("remove_H", &options.remh, true)
+X("no_model_record", &options.nomodel, false)
+X("no_cryst_record", &options.nocryst, false)
+X("no_ter_record", &options.noter, false)
+X("no_end_record", &options.noend, false)
+X("protonate", &options.prot, false)
+X("read_ssbond", &options.rssb, false)
+X("write_ssbond", &options.wrss, false)
+X("keep_ss_name", &options.keepssn, false)
+X("keep_serial", &options.keepser, false)
+X("N-terminus", &options.nterm, true)
+X("C-terminus", &options.cterm, false)
+X("DNA-5'-terminus", &options.dna5term, true)
+X("DNA-3'-terminus", &options.dna3term, true)
+X("RNA-5'-terminus", &options.rna5term, true)
+X("RNA-3'-terminus", &options.rna3term, true)
+X("warn_occ", &options.warnocc, false)

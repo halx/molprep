@@ -1,0 +1,16 @@
+#inPDB          = 1EJG.pdb.gz
+#inPDB          = 1D8G.pdb.gz
+#inPDB          = 1J8G.pdb
+inPDB		= 3UNB.pdb.gz
+#inPDB /c/cbg/mdw/pdb/pdb/a1/pdb2a1c.ent.gz
+
+outPDB		= test.pdb
+output_format	= std			# 'std' or 'min'
+altloc		= A
+remove_H	= y
+write_ssbond	= y			# write SSBOND records
+keep_ss_name	= n			# keep ssbond_name in output
+protonate	= y
+protonate_ttb	= ../data/amber.ttb
+protonate_pH	= 7.0
+top_file	= ../data/top.dat

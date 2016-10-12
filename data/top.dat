@@ -1,0 +1,1485 @@
+#
+# Topology database for amino acid, DNA and RNA residues
+#
+# [str] sections combine residues belonging to a particular molecule type
+# where str can be 'proteins', 'DNA', 'RNA' or 'other'.  Each residue record
+# starts with RECORD followed by the residue and alias names.  FTERM and LTERM
+# are pointers to the first and last terminal residue names.  HEAVY lists all
+# heavy atoms of a residue.  The HYDRO entries look like this:
+#   name of H | number of H's | bonding type | distance |
+#   atom attached to H | control atoms
+# Residue records are terminated with END.  Residue and atom names follow the
+# PDB standard.
+#
+
+
+
+[proteins]
+
+RESIDUE ALA
+  RTYPE A
+  FTERM NALA
+  LTERM CALA
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    3  4  1.111  CB    CA    N
+  HEAVY N CA C O CB
+END
+
+RESIDUE ARG
+  RTYPE A
+  FTERM NARG
+  LTERM CARG
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HD    2  6  1.111  CD    NE    CG
+  HYDRO HE    1  1  1.000  NE    CD    CZ
+  HYDRO HH1   2  3  1.000  NH1   CZ    NE
+  HYDRO HH2   2  3  1.000  NH2   CZ    NE
+  HEAVY N CA C O CB CG CD NE CZ NH1 NH2
+END
+
+RESIDUE ARGN
+  RTYPE A
+#  FTERM
+#  LTERM 
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HD    2  6  1.111  CD    NE    CG
+  HYDRO HE    1  1  1.000  NE    CD    CZ
+  HYDRO HH1   1  2  1.000  NH1   CZ    NE
+  HYDRO HH2   2  3  1.000  NH2   CZ    NE
+  HEAVY N CA C O CB CG CD NE CZ NH1 NH2
+END
+
+RESIDUE ASN
+  RTYPE A
+  FTERM NASN
+  LTERM CASN
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD2   2  3  1.000  ND2   CG    CB
+  HEAVY N CA C O CB CG OD1 ND2
+END
+
+RESIDUE ASP
+  RTYPE A
+  FTERM NASP
+  LTERM CASP
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HEAVY N CA C O CB CG OD1 OD2
+END
+
+RESIDUE ASPP ASH     # names for CHARMM and AMBER
+  RTYPE A
+#  FTERM
+#  LTERM 
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD2   1  2  0.960  OD2   CG    CB
+  HEAVY N CA C O CB CG OD1 OD2
+END
+
+RESIDUE CYS
+  RTYPE A
+  FTERM NCYS
+  LTERM CCYS
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    SG    CA
+  HYDRO HG1   1  2  1.000  SG    CB    CA
+  HEAVY N CA C O CB SG
+END
+
+RESIDUE CYS2 CYX     # S-S bridge
+  RTYPE A
+  FTERM NCYX
+  LTERM CCYX
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    SG    CA
+  HEAVY N CA C O CB SG
+END
+
+RESIDUE CYM          # deprotonated SG
+  RTYPE A
+#  FTERM
+#  LTERM 
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    SG
+  HEAVY N CA C O CB SG
+END
+
+RESIDUE GLN
+  RTYPE A
+  FTERM NGLN
+  LTERM CGLN
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HE2   2  3  1.000  NE2   CD    CG
+  HEAVY N CA C O CB CG CD OE1 NE2
+END
+
+RESIDUE GLU
+  RTYPE A
+  FTERM NGLU
+  LTERM CGLU
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HEAVY N CA C O CB CG CD OE1 OE2
+END
+
+RESIDUE GLUP GLH
+  RTYPE A
+#  FTERM
+#  LTERM 
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HE2   1  2  0.960  OE2   CD    CG
+  HEAVY N CA C O CB CG CD OE1 OE2
+END
+
+RESIDUE GLY
+  RTYPE A
+  FTERM NGLY
+  LTERM CGLY
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    2  6  1.080  CA    C     N
+  HEAVY N CA C O
+END
+
+RESIDUE HSD HID
+  RTYPE A
+  FTERM NHSD
+  LTERM CHSD
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HD1   1  1  1.000  ND1   CG    CE1
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2
+END
+
+RESIDUE HIS HSE HIE  # epsilon-protonated by default
+  RTYPE A
+  FTERM NHIS
+  LTERM CHIS
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HE2   1  1  1.000  NE2   CE1   CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2
+END
+
+RESIDUE HSP HIP      # doubly protonated
+  RTYPE A
+  FTERM NHSP
+  LTERM CHSP
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HD1   1  1  1.000  ND1   CG    CE1
+  HYDRO HE2   1  1  1.000  NE2   CE1   CD2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2
+END
+
+RESIDUE ILE
+  RTYPE A
+  FTERM NILE
+  LTERM CILE
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    1  5  1.111  CB    CA    CG1   CG2
+  HYDRO HG1   2  6  1.111  CG1   CD1   CB
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HYDRO HD    3  4  1.000  CD1   CG1   CB
+  HEAVY N CA C O CB CG1 CG2 CD1
+END
+
+RESIDUE LEU
+  RTYPE A
+  FTERM NLEU
+  LTERM CLEU
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    1  5  1.111  CG    CB    CD1   CD2
+  HYDRO HD1   3  4  1.111  CD1   CG    CB
+  HYDRO HD2   3  4  1.111  CD2   CG    CB
+  HEAVY N CA C O CB CG CD1 CD2
+END
+
+RESIDUE LSN LYN      # deprotonated -NH3
+  RTYPE A
+#  FTERM
+#  LTERM 
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.000  CG    CD    CB
+  HYDRO HD    2  6  1.000  CD    CE    CG
+  HYDRO HE    2  6  1.000  CE    NZ    CD
+  HYDRO HZ    2  3  1.000  NZ    CE    CD
+  HEAVY N CA C O CB CG CD CE NZ
+END
+
+RESIDUE LYS
+  RTYPE A
+  FTERM NLYS
+  LTERM CLYS
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HD    2  6  1.111  CD    CE    CG
+  HYDRO HE    2  6  1.111  CE    NZ    CD
+  HYDRO HZ    3  4  1.040  NZ    CE    CD
+  HEAVY N CA C O CB CG CD CE NZ
+END
+
+RESIDUE MET
+  RTYPE A
+  FTERM NMET
+  LTERM CMET
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    SD    CB
+  HYDRO HE    3  4  1.111  CE    SD    CG
+  HEAVY N CA C O CB CG SD CE
+END
+
+RESIDUE PHE
+  RTYPE A
+  FTERM NPHE
+  LTERM CPHE
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HE2   1  1  1.000  CE2   CD2   CZ
+  HYDRO HZ    1  1  1.080  CZ    CE1   CE2
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ
+END
+
+RESIDUE PRO
+  RTYPE A
+  FTERM NPRO
+  LTERM CPRO
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HD    2  6  1.111  CD    N     CG
+  HEAVY N CA C O CB CG CD
+END
+
+RESIDUE SER
+  RTYPE A
+  FTERM NSER
+  LTERM CSER
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    OG    CA
+  HYDRO HG1   1  2  0.960  OG    CB    CA
+  HEAVY N CA C O CB OG
+END
+
+RESIDUE THR
+  RTYPE A
+  FTERM NTHR
+  LTERM CTHR
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    1  5  1.111  CB    CA    OG1   CG2
+  HYDRO HG1   1  2  0.960  OG1   CB    CA
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HEAVY N CA C O CB OG1 CG2
+END
+
+RESIDUE TRP
+  RTYPE A
+  FTERM NTRP
+  LTERM CTRP
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD1   1  1  1.000  CD1   NE1   CG
+  HYDRO HE1   1  1  1.000  NE1   CD1   CE2
+  HYDRO HE3   1  1  1.000  CE3   CD2   CZ3
+  HYDRO HZ3   1  1  1.000  CZ3   CE3   CH2
+  HYDRO HH2   1  1  1.000  CH2   CZ3   CZ2
+  HYDRO HZ2   1  1  1.000  CZ2   CE2   CH2
+  HEAVY N CA C O CB CG CD1 CD2 NE1 CE2 CE3 CZ2 CZ3 CH2
+END
+
+RESIDUE TYR
+  RTYPE A
+  FTERM NTYR
+  LTERM CTYR
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HE2   1  1  1.000  CE2   CD2   CZ
+  HYDRO HH    1  2  0.960  OH    CZ    CE1
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ OH
+END
+
+RESIDUE TYM
+  RTYPE A
+  FTERM NTYM
+  LTERM CTYM
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HE2   1  1  1.000  CE2   CD2   CZ
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ OH
+END
+
+RESIDUE VAL
+  RTYPE A
+  FTERM NVAL
+  LTERM CVAL 
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    1  5  1.111  CB    CA    CG1   CG2
+  HYDRO HG1   3  4  1.111  CG1   CB    CA
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HEAVY N CA C O CB CG1 CG2
+END
+
+
+# N- and C-termini from AMBER
+
+RESIDUE ACE
+  RTYPE @
+  HYDRO HH3   3  4  0.997  CH3   C     O
+  HEAVY C O CH3
+END
+
+RESIDUE NH2
+  RTYPE @
+  HYDRO H     2  3  0.997  N    -C   -CA
+  HEAVY N
+END
+
+RESIDUE NALA
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    3  4  1.111  CB    CA    N
+  HEAVY N CA C O CB
+END
+
+RESIDUE NARG
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HYDRO HD    2  6  1.111  CD    CG    NE
+  HYDRO HE    1  1  1.000  NE    CD    CZ
+  HYDRO HH1   2  3  1.000  NH1   CZ    NE
+  HYDRO HH2   2  3  1.000  NH2   CZ    NE
+  HEAVY N CA C O CB CG CD NE CZ NH1 NH2
+END
+
+RESIDUE NGLY
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    C
+  HYDRO HA    2  6  1.080  CA    N     C
+  HEAVY N CA C O
+END
+
+RESIDUE NSER
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    OG
+  HYDRO HG    1  2  0.960  OG    CB    CA
+  HEAVY N CA C O CB OG
+END
+
+RESIDUE NTHR
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    1  5  1.111  CB    CA    CG2   OG1
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HYDRO HG1   1  2  1.000  OG1   CB    CA
+  HEAVY N CA C O CB OG1 CG2
+END
+
+RESIDUE NLEU
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    1  5  1.111  CG    CB    CD1   CD2
+  HYDRO HD1   3  4  1.111  CD1   CG    CB
+  HYDRO HD2   3  4  1.111  CD2   CG    CB
+  HEAVY N CA C O CB CG CD1 CD2
+END
+
+RESIDUE NILE
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    1  5  1.111  CB    CA    CG2   CG1
+  HYDRO HG1   2  6  1.111  CG1   CD1   CB
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HYDRO HD    3  4  1.111  CD1   CG1   CB
+  HEAVY N CA C O CB CG1 CG2 CD1
+END
+
+RESIDUE NVAL
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    1  5  1.111  CB    CA    CG1   CG2
+  HYDRO HG1   3  4  1.111  CG1   CB    CA
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HEAVY N CA C O CB CG1 CG2
+END
+
+RESIDUE NASN
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD2   2  3  1.000  ND2   CG    CB
+  HEAVY N CA C O CB CG OD1 ND2
+END
+
+RESIDUE NGLN
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HYDRO HE2   2  3  1.000  NE2   CD    CG
+  HEAVY N CA C O CB CG CD OE1 NE2
+END
+
+RESIDUE NHSD NHID
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  ND1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2
+END
+
+RESIDUE NHIS NHSE NHIE
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HE2   1  1  1.000  NE2   CE1   CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2
+END
+
+RESIDUE NHIP NHSP
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  ND1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HE2   1  1  1.000  NE2   CE1   CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2
+END
+
+RESIDUE NTRP
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    NE1
+  HYDRO HE1   1  1  1.000  NE1   CD1   CE2
+  HYDRO HZ2   1  1  1.000  CZ2   CE2   CH2
+  HYDRO HH2   1  1  1.000  CH2   CZ2   CZ3
+  HYDRO HZ3   1  1  1.000  CZ3   CH2   CE3
+  HYDRO HE3   1  1  1.000  CE3   CZ3   CD2
+  HEAVY N CA C O CB CG CD1 CD2 NE1 CE2 CE3 CZ2 CZ3 CH2
+END
+
+RESIDUE NPHE
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HZ    1  1  1.080  CZ    CE1   CE2
+  HYDRO HE2   1  1  1.000  CE2   CZ    CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ
+END
+
+RESIDUE NTYR
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HH    1  2  0.960  OH    CZ    CE1
+  HYDRO HE2   1  1  1.000  CE2   CZ    CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ OH
+END
+
+RESIDUE NTYM
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HE2   1  1  1.000  CE2   CZ    CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ OH
+END
+
+RESIDUE NGLU
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HEAVY N CA C O CB CG CD OE1 OE2
+END
+
+RESIDUE NASP
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HEAVY N CA C O CB CG OD1 OD2
+END
+
+RESIDUE NLYS
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HYDRO HD    2  6  1.111  CD    CG    CE
+  HYDRO HE    2  6  1.111  CE    CD    NZ
+  HYDRO HZ    3  4  1.040  NZ    CE    CD
+  HEAVY N CA C O CB CG CD CE NZ
+END
+
+RESIDUE NPRO
+  RTYPE A
+  HYDRO H     2  6  0.997  N     CA    CD
+  HYDRO HD    2  6  1.111  CD    N     CG
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HEAVY N CA C O CB CG CD
+END
+
+RESIDUE NCYS
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    SG
+  HYDRO HG    1  2  1.000  SG    CB    CA
+  HEAVY N CA C O CB SG
+END
+
+RESIDUE NCYX
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    SG
+  HEAVY N CA C O CB SG
+END
+
+RESIDUE NMET
+  RTYPE A
+  HYDRO H     3  4  0.997  N     CA    CB
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    SD
+  HYDRO HE    3  4  1.111  CE    SD    CG
+  HEAVY N CA C O CB CG SD CE
+END
+
+RESIDUE CALA
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    3  4  1.111  CB    CA    N
+  HYDRO OXT   1  1  1.230  C     CA    O
+  HEAVY N CA C O CB OXT
+END
+
+RESIDUE CARG
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HYDRO HD    2  6  1.111  CD    CG    NE
+  HYDRO HE    1  1  1.000  NE    CD    CZ
+  HYDRO HH1   2  3  1.000  NH1   CZ    NE
+  HYDRO HH2   2  3  1.000  NH2   CZ    NE
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD NE CZ NH1 NH2 OXT
+END
+
+RESIDUE CGLY
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    2  6  1.080  CA    N     C
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O OXT
+END
+
+RESIDUE CSER
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    OG
+  HYDRO HG    1  2  0.960  OG    CB    CA
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB OG OXT
+END
+
+RESIDUE CTHR
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    1  5  1.111  CB    CA    CG2   OG1
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HYDRO HG1   1  2  1.000  OG1   CB    CA
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB OG1 CG2 OXT
+END
+
+RESIDUE CLEU
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    1  5  1.111  CG    CB    CD1   CD2
+  HYDRO HD1   3  4  1.111  CD1   CG    CB
+  HYDRO HD2   3  4  1.111  CD2   CG    CB
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD1 CD2 OXT
+END
+
+RESIDUE CILE
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    1  5  1.111  CB    CA    CG2   CG1
+  HYDRO HG1   2  6  1.111  CG1   CD1   CB
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HYDRO HD    3  4  1.111  CD1   CG1   CB
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG1 CG2 CD1 OXT
+END
+
+RESIDUE CVAL
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    1  5  1.111  CB    CA    CG1   CG2
+  HYDRO HG1   3  4  1.111  CG1   CB    CA
+  HYDRO HG2   3  4  1.111  CG2   CB    CA
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG1 CG2 OXT
+END
+
+RESIDUE CASN
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD2   2  3  1.000  ND2   CG    CB
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG OD1 ND2 OXT
+END
+
+RESIDUE CGLN
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HYDRO HE2   2  3  1.000  NE2   CD    CG
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD OE1 NE2 OXT
+END
+
+RESIDUE CHSD CHID
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  ND1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2 OXT
+END
+
+RESIDUE CHIS CHSE CHIE
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HE2   1  1  1.000  NE2   CE1   CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2 OXT
+END
+
+RESIDUE CHSP CHIP
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.000  CA    N     CB    C
+  HYDRO HB    2  6  1.000  CB    CA    CG
+  HYDRO HD1   1  1  1.000  ND1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   ND1   NE2
+  HYDRO HE2   1  1  1.000  NE2   CE1   CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    NE2
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG ND1 CD2 CE1 NE2 OXT
+END
+
+RESIDUE CTRP
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    NE1
+  HYDRO HE1   1  1  1.000  NE1   CD1   CE2
+  HYDRO HZ2   1  1  1.000  CZ2   CE2   CH2
+  HYDRO HH2   1  1  1.000  CH2   CZ2   CZ3
+  HYDRO HZ3   1  1  1.000  CZ3   CH2   CE3
+  HYDRO HE3   1  1  1.000  CE3   CZ3   CD2
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD1 CD2 NE1 CE2 CE3 CZ2 CZ3 CH2 OXT
+END
+
+RESIDUE CPHE
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HZ    1  1  1.080  CZ    CE1   CE2
+  HYDRO HE2   1  1  1.000  CE2   CZ    CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ OXT
+END
+
+RESIDUE CTYR
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HH    1  2  0.960  OH    CZ    CE1
+  HYDRO HE2   1  1  1.000  CE2   CZ    CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ OH OXT
+END
+
+RESIDUE CTYM
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HD1   1  1  1.000  CD1   CG    CE1
+  HYDRO HE1   1  1  1.000  CE1   CD1   CZ
+  HYDRO HE2   1  1  1.000  CE2   CZ    CD2
+  HYDRO HD2   1  1  1.000  CD2   CG    CE2
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD1 CD2 CE1 CE2 CZ OH OXT
+END
+
+RESIDUE CGLU
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD OE1 OE2 OXT
+END
+
+RESIDUE CASP
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG OD1 OD2 OXT
+END
+
+RESIDUE CLYS
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    CD
+  HYDRO HD    2  6  1.111  CD    CG    CE
+  HYDRO HE    2  6  1.111  CE    CD    NZ
+  HYDRO HZ    3  4  1.040  NZ    CE    CD
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD CE NZ OXT
+END
+
+RESIDUE CPRO
+  RTYPE A
+  HYDRO HD    2  6  1.111  CD    N     CG
+  HYDRO HG    2  6  1.111  CG    CD    CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG CD OXT
+END
+
+RESIDUE CCYS
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    SG
+  HYDRO HG    1  2  1.000  SG    CB    CA
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB SG OXT
+END
+
+RESIDUE CCYX
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    SG
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB SG OXT
+END
+
+RESIDUE CMET
+  RTYPE A
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.111  CG    CB    SD
+  HYDRO HE    3  4  1.111  CE    SD    CG
+  HYDRO OC1   1  1  1.230  C     CA    OC2
+  HEAVY N CA C O CB CG SD CE OXT
+END
+
+
+# other amino acids
+
+RESIDUE DAB          # diamino-butyric acid
+  RTYPE @
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.000  CG    CB    ND
+  HYDRO HD    3  4  1.000  ND    CG    CB
+  HEAVY N CA C O CB CG ND
+END
+
+RESIDUE HYP          # hydroxy-proline
+  RTYPE @
+  HYDRO HD2   2  6  0.997  CD    N     CG
+  HYDRO HG    1  5  1.080  CG    CD    OD1   CB
+  HYDRO HD1   1  2  1.111  OD1   CG    CD 
+  HYDRO HB    2  6  1.000  CB    CG    CA
+  HYDRO HA    1  5  1.000  CA    N     CB    C
+  HEAVY N CA C O CB CG CD OD1
+END
+
+RESIDUE ORN          # ornithine
+  RTYPE @
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     CB    C
+  HYDRO HB    2  6  1.111  CB    CA    CG
+  HYDRO HG    2  6  1.000  CG    CB    CD
+  HYDRO HD    2  6  1.000  CD    CG    NE
+  HYDRO HE    3  4  1.000  NE    CD    CG
+  HEAVY N CA C O CB CG CD NE
+END
+
+RESIDUE MSE
+  RTYPE @
+  HYDRO H     1  1  0.997  N     -C    CA
+  HYDRO HA    1  5  1.080  CA    N     C     CB
+  HYDRO HB    2  6  1.111  CB    CG    CA
+  HYDRO HG    2  6  1.111  CG   <SE    CB
+  HYDRO HE    3  4  1.111  CE   <SE    CG
+  HEAVY N CA C O CB CG <SE CE
+END
+
+
+[DNA]
+
+# AMBER residue names
+
+RESIDUE DA
+  RTYPE A
+  FTERM DA5
+  LTERM DA3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' C1' N9 C8 N7 C5 C6 N6 N1 C2
+  HEAVY N3 C4
+END
+
+RESIDUE DA5
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY C4 N3 N6 OP1 OP2 N9 C1' C3' O5' C5 O4' C5' P C4' C2' C2 N1 N7 C6
+  HEAVY O3' C8
+END
+
+RESIDUE DA3
+  RTYPE A
+# FTERM
+# LTERM 
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY C4 N3 N6 OP1 OP2 N9 C1' C3' O5' C5 O4' C5' P C4' C2' C2 N1 N7 C6
+  HEAVY O3' C8
+END
+
+RESIDUE DAN
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY C4 N3 N6 OP1 OP2 N9 C1' C3' O5' C5 O4' C5' P C4' C2' C2 N1 N7 C6
+  HEAVY O3' C8
+END
+
+RESIDUE DT
+  RTYPE A
+  FTERM DT5
+  LTERM DT3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H7    3  4  1.000  C7    C5    C6
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' C1' N1 C2 O2 N3 C4 O4 C5 C7 C6
+END
+
+RESIDUE DT5
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H7    3  4  1.000  C7    C5    C6
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY C6 O4 OP1 OP2 C1' C3' O5' C5 O4' C5' P C4' C2' C2 N1 N3 C7 O2
+  HEAVY O3' C4
+END
+
+RESIDUE DT3
+  RTYPE A
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H7    3  4  1.000  C7    C5    C6
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY C6 O4 OP1 OP2 C1' C3' O5' C5 O4' C5' P C4' C2' C2 N1 N3 C7 O2
+  HEAVY O3' C4
+END
+
+RESIDUE DTN
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H7    3  4  1.000  C7    C5    C6
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY C6 O4 OP1 OP2 C1' C3' O5' C5 O4' C5' P C4' C2' C2 N1 N3 C7 O2
+  HEAVY O3' C4
+END
+
+RESIDUE DG
+  RTYPE A
+  FTERM DG5
+  LTERM DG3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' C1' N9 C8 N7 C5 C6 O6 N1 C2
+  HEAVY N2 N3 C4
+END
+
+RESIDUE DG5
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY OP1 OP2 C3' C1' C5' O6 O4' C8 C2 C6 C5 C4 N9 C4' C2' N1 N2 N3 N7
+  HEAVY P O5' O3'
+END
+
+RESIDUE DG3
+  RTYPE A
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 OP2 C3' C1' C5' O6 O4' C8 C2 C6 C5 C4 N9 C4' C2' N1 N2 N3 N7
+  HEAVY P O5' O3'
+END
+
+RESIDUE DGN
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 OP2 C3' C1' C5' O6 O4' C8 C2 C6 C5 C4 N9 C4' C2' N1 N2 N3 N7
+  HEAVY P O5' O3'
+END
+
+RESIDUE DC
+  RTYPE A
+  FTERM DC5
+  LTERM DC3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' C1' N1 C2 O2 N3 C4 N4 C5 C6
+END
+
+RESIDUE DC5
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HEAVY OP1 C6 OP2 P C1' C3' O5' O4' C5' C5 C4' C2' C2 N1 N3 N4 O2 O3'
+  HEAVY C4
+END
+
+RESIDUE DC3
+  RTYPE A
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 C6 OP2 P C1' C3' O5' O4' C5' C5 C4' C2' C2 N1 N3 N4 O2 O3'
+  HEAVY C4
+END
+
+RESIDUE DCN
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'   2  6  1.000  C2'   C1'   C3'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 C6 OP2 P C1' C3' O5' O4' C5' C5 C4' C2' C2 N1 N3 N4 O2 O3'
+  HEAVY C4
+END
+
+
+[RNA]
+
+# AMBER residue names
+
+RESIDUE RA A
+  RTYPE A
+  FTERM RA5
+  LTERM RA3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' O2' C1' N9 C8 N7 C5 C6 N6
+  HEAVY N1 C2 N3 C4
+END
+
+RESIDUE RA5
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY OP1 OP2 C3' C1' C5' O4' C8 C2 C6 C5 C4 N9 C4' C2' O2' N1 N3 N6
+  HEAVY N7 P O5' O3'
+END
+
+RESIDUE RA3
+  RTYPE A
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 OP2 C3' C1' C5' O4' C8 C2 C6 C5 C4 N9 C4' C2' O2' N1 N3 N6
+  HEAVY N7 P O5' O3'
+END
+
+RESIDUE RAN
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H6    2  3  1.000  N6    C6    C5
+  HYDRO H2    1  1  1.000  C2    N1    N3
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 OP2 C3' C1' C5' O4' C8 C2 C6 C5 C4 N9 C4' C2' O2' N1 N3 N6
+  HEAVY N7 P O5' O3'
+END
+
+RESIDUE RU U
+  RTYPE A
+  FTERM RU5
+  LTERM RU3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' O2' C1' N1 C2 O2 N3 C4 O4 C5 C6
+END
+
+RESIDUE RU5
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY OP1 O4 C6 OP2 P C1' C3' O5' O4' C5' C5 C4' C2' N1 O2' N3 O2 C2
+  HEAVY O3' C4
+END
+
+RESIDUE RU3
+  RTYPE A
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 O4 C6 OP2 P C1' C3' O5' O4' C5' C5 C4' C2' N1 O2' N3 O2 C2
+  HEAVY O3' C4
+END
+
+RESIDUE RUN
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H3    1  1  1.000  N3    C4    C2
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 O4 C6 OP2 P C1' C3' O5' O4' C5' C5 C4' C2' N1 O2' N3 O2 C2
+  HEAVY O3' C4
+END
+
+RESIDUE RG G
+  RTYPE A
+  FTERM RG5
+  LTERM RG3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' O2' C1' N9 C8 N7 C5 C6 O6
+  HEAVY N1 C2 N2 N3 C4
+END
+
+RESIDUE RG5
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY OP1 OP2 C3' C1' C5' O6 O4' C8 C2 C6 C5 C4 N9 C4' C2' O2' N1 N2
+  HEAVY N3 N7 P O5' O3'
+END
+
+RESIDUE RG3
+  RTYPE A
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 OP2 C3' C1' C5' O6 O4' C8 C2 C6 C5 C4 N9 C4' C2' O2' N1 N2
+  HEAVY N3 N7 P O5' O3'
+END
+
+RESIDUE RGN
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N9    C2'
+  HYDRO H8    1  1  1.000  C8    N9    N7
+  HYDRO H1    1  1  1.000  N1    C6    C2
+  HYDRO H2    2  3  1.000  N2    C2    N1
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY OP1 OP2 C3' C1' C5' O6 O4' C8 C2 C6 C5 C4 N9 C4' C2' O2' N1 N2
+  HEAVY N3 N7 P O5' O3'
+END
+
+RESIDUE RC C
+  RTYPE A
+  FTERM RC5
+  LTERM RC3
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY P OP1 OP2 O5' C5' C4' O4' C3' O3' C2' O2' C1' N1 C2 O2 N3 C4 N4 C5 C6
+END
+
+RESIDUE RC5
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HEAVY C6 OP1 OP2 N4 C1' C3' O5' C5 O4' C5' P C4' C2' N1 O2' N3 O2 C2
+  HEAVY O3' C4
+END
+
+RESIDUE RC3
+  RTYPE A
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY C6 OP1 OP2 N4 C1' C3' O5' C5 O4' C5' P C4' C2' N1 O2' N3 O2 C2
+  HEAVY O3' C4
+END
+
+RESIDUE RCN
+  RTYPE A
+  HYDRO H5T   1  2  1.000  O5'   C5'   C4'
+  HYDRO H5'   2  6  1.000  C5'   O5'   C4'
+  HYDRO H4'   1  5  1.000  C4'   C5'   O4'   C3'
+  HYDRO H1'   1  5  1.000  C1'   O4'   N1    C2'
+  HYDRO H6    1  1  1.000  C6    N1    C5
+  HYDRO H5    1  1  1.000  C5    C6    C4
+  HYDRO H4    2  3  1.000  N4    C4    C5
+  HYDRO H3'   1  5  1.000  C3'   C4'   C2'   O3'
+  HYDRO H2'1  1  5  1.000  C2'   C1'   C3'   O2'
+  HYDRO HO'2  1  2  1.000  O2'   C2'   C1'
+  HYDRO H3T   1  2  1.000  O3'   C3'   C4'
+  HEAVY C6 OP1 OP2 N4 C1' C3' O5' C5 O4' C5' P C4' C2' N1 O2' N3 O2 C2
+  HEAVY O3' C4
+END
+
+
+[other]
+
+RESIDUE HOH
+  RTYPE H
+  HYDRO H     2 10  0.9572  O
+  HEAVY O
+END

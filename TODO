@@ -1,0 +1,12 @@
+* deal properly with C-terminus
+* deal properly with (missing) altLocs,
+* check top.dat for completeness, in particular end termini of protonated
+  residues and the res_type
+* rename residues back to standard PDB files if requested
+* function to reorder to PDB order
+* translation table for atom/residue names (e.g. ILE CD -> CD1, HSD -> HIS)
+* protonate waters in a less arbitrary fashion?
+* use Better String Library http://bstring.sourceforge.net/ ?
+* doxygen or similar?
+* read GROMACS v-site paper
+* proper unit tests

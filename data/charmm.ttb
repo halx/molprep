@@ -1,0 +1,11 @@
+# translation table for titratable site (ARG, ASP, CYS, GLU, HIS, LYS and TYR)
+# for the CHARMM force fields
+# non-titratable residues will be ignored, absent titratable sites will not be
+# translated
+#ARG
+ASP ASPP
+#CYS
+GLU GLUP
+HIS HSP
+LYS LSN
+#TYR TYM
